@@ -2,10 +2,7 @@
 <html lang="en">
     <style>
         /* Extra CSS Styles */
-        .marginInner{
-            margin: 30px 30px 0;
-        flex: 1;
-        }
+
         .margin-10px{
             margin-left: 10px;
         }
@@ -30,6 +27,62 @@
             font-size: 100px;
             color: #46ce46;
         }
+        .pageBackground{
+            background: #fafafa21;
+            padding: 30px;
+            box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+            border-radius: 10px;
+            border: 6px solid #305A72;
+            margin: 30px 30px;
+            flex: 1
+        }
+        .headerStyle{
+            text-align: center;
+            font-size: 35px;
+            font-family: sans-serif;
+            color: #305A72;
+            border-bottom: 2px solid #305A72;
+        }
+
+        .fontFamily{
+            font-family: cursive;
+        }
+        .fontSize{
+            font-size: 17px;
+        }
+        .checkboxLabel{
+            margin: .5rem;
+        }
+
+        .table td, .table th {
+            padding: .25rem !important;
+        }
+        .modalheader{
+            text-align: center;
+            font-size: 35px;
+            font-family: sans-serif;
+            color: #305A72;
+            border-bottom: 2px solid #305A72;
+            margin: .5rem;
+        }
+        .previewFooter{
+            float: right;
+            margin-bottom: 1rem;
+        }
+        .previewContent{
+            border: 3px solid #305A72 !important;
+            border-radius: 10px !important;
+        }
+        .padding-bottom{
+            padding-bottom: 0px !important;
+        }
+        .form-control {
+            border: 1px solid #305A72 !important;
+        }
+        .bootstrap-select{
+            border: 1px solid #305A72 !important;
+            border-radius: .25rem;
+        }
     </style>
 
 <head>
@@ -43,154 +96,146 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
 </head>
-<body id="body">
-    <div class="main-card mb-3 card marginInner">
-        <div class="card-body">
-            <h5 class="card-title">Resume Form</h5>
-            <form class="position-relative form-group">
-                <div class="row">
-                    <div class="col-md-6 mb-2">
-                        <label for="firstName" class="">First Name</label>
-                        <input name="firstName" id="firstName" placeholder="Enter Your First Name" type="text" class="form-control" onkeypress="return lettersOnly(event)">
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label for="lastName" class="">Last Name</label>
-                        <input name="lastName" id="lastName" placeholder="Enter Your Last Name" type="text" class="form-control" onkeypress="return lettersOnly(event)">
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label for="emailID">Email</label>
-                        <input name="email" id="emailID" placeholder="Enter Email ID" type="email" class="form-control">
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label for="Mobile Number" class="">Mobile Number</label>
-                        <input name="mobileNumber" id="mobileNumber" placeholder="Mobile Number" type="numeric" onkeypress="return event.charCode >= 46 && event.charCode <= 57" class="form-control">
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label for="State">State</label>
-                        <select class="form-control" id="state" >
-                            <option value disabled selected>Select State</option>
-                            <option>Arunachal Pradesh</option>
-                            <option>Chhattisgarh</option>
-                            <option>Karnataka</option>
-                            <option>Maharashtra</option>
-                            <option>Nagaland</option>
-                            <option>Punjab</option>
-                            <option>Sikkim</option>
-                            <option>West Bengal</option>
-                            <option>And The Rest</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <label for="City" class="">City</label>
-                        <select class="form-control" id="city">
-                            <option value disabled selected>Select City</option>
-                            <option>Kolkata</option>
-                            <option>Lucknow</option>
-                            <option>Gangtok</option>
-                            <option>And The Rest</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-6 mb-2">
-                        <label for="Gender">Gender</label>
-                        <div class="position-relative form-check margin-10px">
-                            <label class="form-check-label">
-                                <input name="radioBtn" type="radio" id="gendermale" class="form-check-input"> 
-                                <span>Male</span>
-                            </label>
-                        </div>
-                        <div class="position-relative form-check margin-10px">
-                            <label class="form-check-label">
-                                <input name="radioBtn" type="radio" id="genderfemale" class="form-check-input"> 
-                                <span>Female</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 mb-2">
-                        <label for="Education" class="">Education</label>
-                        <select class="selectpicker" id="education" multiple data-live-search="true">
-                            <option>Graduate</option>
-                            <option>HS</option>
-                            <option>Post Graduate</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-12 mb-2">
-                        <div for="hobies" class="">Hobies/Interest</div>
-                        <label><input type="checkbox" value="football" name="hobies"> Football</label>
-                        <label><input type="checkbox" value="baseball" name="hobies"> Baseball</label>
-                        <label><input type="checkbox" value="cricket" name="hobies"> Cricket</label>
-                        <label><input type="checkbox" value="boxing" name="hobies"> Boxing</label>
-                        <label><input type="checkbox" value="racing" name="hobies"> Racing</label>
-                        <label><input type="checkbox" value="swimming" name="hobies"> Swimming</label>
-                    </div>
-                    <div class="col-sm-12 mb-2">
-                        <label for="careerObjective">Career Objective / Bio</label>
-                        <textarea name="text" id="careerObjective" class="form-control"></textarea>
-                    </div>
-                    <div class="col-sm-12 mb-2">
-                        <label for="careerObjective">Profile</label>
-                        <input name="file" id="profile" type="file" accept=".png,.jpeg" class="form-control-file">
-                    </div>
-                    
+<body id="body" class="fontFamily">
+    <div class="pageBackground">
+        <h5 class="card-title headerStyle">Resume Builder</h5>
+        <form class="position-relative">
+            <div class="row fontSize">
+                <div class="col-md-6 mb-2" class="">
+                    <label for="firstName" >First Name</label>
+                    <input name="firstName" id="firstName" placeholder="Enter Your First Name" type="text" class="form-control" onkeypress="return lettersOnly(event)">
                 </div>
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#submit">Submit</button>
-                <button type="button" id="previewModal" class="btn btn-info" data-toggle="modal" data-target="#preview">Preview</button>
-            </form>
-        </div>
+                <div class="col-md-6 mb-2">
+                    <label for="lastName" >Last Name</label>
+                    <input name="lastName" id="lastName" placeholder="Enter Your Last Name" type="text" class="form-control" onkeypress="return lettersOnly(event)">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <label for="emailID">Email</label>
+                    <input name="email" id="emailID" placeholder="Enter Email ID" type="email" class="form-control">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <label for="Mobile Number">Mobile Number</label>
+                    <input name="mobileNumber" id="mobileNumber" placeholder="Mobile Number" type="numeric" onkeypress="return event.charCode >= 46 && event.charCode <= 57" class="form-control">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <label for="State">State</label>
+                    <select class="form-control" id="state" >
+                        <option value disabled selected>Select State</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Chhattisgarh</option>
+                        <option>Karnataka</option>
+                        <option>Maharashtra</option>
+                        <option>Nagaland</option>
+                        <option>Punjab</option>
+                        <option>Sikkim</option>
+                        <option>West Bengal</option>
+                        <option>And The Rest</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <label for="City">City</label>
+                    <select class="form-control" id="city">
+                        <option value disabled selected>Select City</option>
+                        <option>Kolkata</option>
+                        <option>Lucknow</option>
+                        <option>Gangtok</option>
+                        <option>And The Rest</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <label for="Gender">Gender</label>
+                    <div class="position-relative form-check margin-10px">
+                        <label class="form-check-label">
+                            <input name="radioBtn" type="radio" id="gendermale" class="form-check-input"> 
+                            <span>Male</span>
+                        </label>
+                    </div>
+                    <div class="position-relative form-check margin-10px">
+                        <label class="form-check-label">
+                            <input name="radioBtn" type="radio" id="genderfemale" class="form-check-input"> 
+                            <span>Female</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <label for="Education">Education</label>
+                    <select class="selectpicker" id="education" multiple data-live-search="true">
+                        <option>Graduate</option>
+                        <option>HS</option>
+                        <option>Post Graduate</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 mb-2">
+                    <div for="hobies">Hobies/Interest</div>
+                    <label><input type="checkbox" class="checkboxLabel" value="football" name="hobies"> Football</label>
+                    <label><input type="checkbox" class="checkboxLabel" value="baseball" name="hobies"> Baseball</label>
+                    <label><input type="checkbox" class="checkboxLabel" value="cricket" name="hobies"> Cricket</label>
+                    <label><input type="checkbox" class="checkboxLabel" value="boxing" name="hobies"> Boxing</label>
+                    <label><input type="checkbox" class="checkboxLabel" value="racing" name="hobies"> Racing</label>
+                    <label><input type="checkbox" class="checkboxLabel" value="swimming" name="hobies"> Swimming</label>
+                </div>
+                <div class="col-sm-12 mb-2">
+                    <label for="careerObjective">Career Objective / Bio</label>
+                    <textarea name="text" id="careerObjective" class="form-control"></textarea>
+                </div>
+                <div class="col-sm-12 mb-3">
+                    <label for="careerObjective">Profile Picture</label>
+                    <input name="file" id="profile" type="file" accept=".png,.jpeg" class="form-control-file margin-10px">
+                </div>
+                
+            </div>
+            <button type="button" id="previewModal" class="btn btn-info" data-toggle="modal" data-target="#preview">Preview</button>
+        </form>
     </div>
 
     <div id="preview" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Preview Resume</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="card-body table-responsive">
-                <table class="mb-0 table table-borderless">
-                    <tbody>
-                    <tr>
-                        <th>First Name</th>
-                        <td id="firstNameView"></td>
-                        <th>Last Name</th>
-                        <td id="lastNameView"></td>
-                    </tr>
-                    <tr>
-                        <th>Email</th>
-                        <td id="emailView">Jacob</td>
-                        <th>Mobile Number</th>
-                        <td id="mobileNumberView">Jacob</td>
-                    </tr>
-                    <tr>
-                        <th>State</th>
-                        <td id="stateView">Jacob</td>
-                        <th>City</th>
-                        <td id="cityView">Jacob</td>
-                    </tr>
-                    <tr>
-                        <th>Gender</th>
-                        <td id="genderView"></td>
-                        <th>Education</th>
-                        <td id="educationView"></td>
-                    </tr>
-                    <tr>
-                        <th>Hobies/Interest</th>
-                        <td id="hobiesView"></td>
-                        <th>Career Objective / Bio</th>
-                        <td id="careerObjectiveView"></td>
-                    </tr>
-                    <tr>
-                        <th>Picture</th>
-                        <td id="profileView"></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal"  data-toggle="modal" data-target="#submit">Submit</button>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+          <div class="modal-content previewContent">
+            <h5 class="card-title modalheader">Preview Resume</h5>
+                <div class="card-body table-responsive padding-bottom">
+                    <table class="mb-0 table table-borderless labelFont">
+                        <tbody>
+                        <tr>
+                            <th>First Name:</th>
+                            <td id="firstNameView"></td>
+                            <th>Last Name:</th>
+                            <td id="lastNameView"></td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td id="emailView">Jacob</td>
+                            <th>Mobile Number :</th>
+                            <td id="mobileNumberView">Jacob</td>
+                        </tr>
+                        <tr>
+                            <th>State:</th>
+                            <td id="stateView">Jacob</td>
+                            <th>City :</th>
+                            <td id="cityView">Jacob</td>
+                        </tr>
+                        <tr>
+                            <th>Gender:</th>
+                            <td id="genderView"></td>
+                            <th>Education:</th>
+                            <td id="educationView"></td>
+                        </tr>
+                        <tr>
+                            <th>Hobies/Interest:</th>
+                            <td id="hobiesView"></td>
+                            <th>Picture:</th>
+                            <td id="profileView"></td>
+                        </tr>
+                        <tr>
+                            <th>Career Objective / Bio:</th>
+                            <td colspan="3"id="careerObjectiveView"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="previewFooter">
+                        <button type="button" class="btn btn-success" data-dismiss="modal"  data-toggle="modal" data-target="#submit">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
           </div>
         </div>
     </div>
