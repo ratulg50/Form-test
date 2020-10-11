@@ -33,8 +33,9 @@
             box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
             border-radius: 10px;
             border: 6px solid #305A72;
-            margin: 30px 30px;
-            flex: 1
+            margin: 30px auto;
+            flex: 1;
+            max-width: 1200px;
         }
         .headerStyle{
             text-align: center;
@@ -86,6 +87,9 @@
         .mandatory{
             color: red;
         }
+        .bodypadding{
+            padding: 20px;
+        }
     </style>
 
 <head>
@@ -99,7 +103,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
 </head>
-<body id="body" class="fontFamily">
+<body id="body" class="fontFamily bodypadding">
     <div class="pageBackground">
         <h5 class="card-title headerStyle">Resume Builder</h5>
         <form class="position-relative">
