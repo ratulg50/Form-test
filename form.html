@@ -83,6 +83,9 @@
             border: 1px solid #305A72 !important;
             border-radius: .25rem;
         }
+        .mandatory{
+            color: red;
+        }
     </style>
 
 <head>
@@ -101,24 +104,24 @@
         <h5 class="card-title headerStyle">Resume Builder</h5>
         <form class="position-relative">
             <div class="row fontSize">
-                <div class="col-md-6 mb-2" class="">
-                    <label for="firstName" >First Name</label>
+                <div class="col-md-6 mb-2">
+                    <label for="firstName" >First Name<span class="mandatory">*</span></label>
                     <input name="firstName" id="firstName" placeholder="Enter Your First Name" type="text" class="form-control" onkeypress="return lettersOnly(event)">
                 </div>
                 <div class="col-md-6 mb-2">
-                    <label for="lastName" >Last Name</label>
+                    <label for="lastName" >Last Name<span class="mandatory">*</span></label>
                     <input name="lastName" id="lastName" placeholder="Enter Your Last Name" type="text" class="form-control" onkeypress="return lettersOnly(event)">
                 </div>
                 <div class="col-md-6 mb-2">
-                    <label for="emailID">Email</label>
+                    <label for="emailID">Email<span class="mandatory">*</span></label>
                     <input name="email" id="emailID" placeholder="Enter Email ID" type="email" class="form-control">
                 </div>
                 <div class="col-md-6 mb-2">
-                    <label for="Mobile Number">Mobile Number</label>
+                    <label for="Mobile Number">Mobile Number<span class="mandatory">*</span></label>
                     <input name="mobileNumber" id="mobileNumber" placeholder="Mobile Number" type="numeric" onkeypress="return event.charCode >= 46 && event.charCode <= 57" class="form-control">
                 </div>
                 <div class="col-md-6 mb-2">
-                    <label for="State">State</label>
+                    <label for="State">State<span class="mandatory">*</span></label>
                     <select class="form-control" id="state" >
                         <option value disabled selected>Select State</option>
                         <option>Arunachal Pradesh</option>
@@ -133,7 +136,7 @@
                     </select>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <label for="City">City</label>
+                    <label for="City">City<span class="mandatory">*</span></label>
                     <select class="form-control" id="city">
                         <option value disabled selected>Select City</option>
                         <option>Kolkata</option>
@@ -158,7 +161,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 mb-2">
-                    <label for="Education">Education</label>
+                    <label for="Education">Education<span class="mandatory">*</span></label>
                     <select class="selectpicker" id="education" multiple data-live-search="true">
                         <option>Graduate</option>
                         <option>HS</option>
@@ -175,14 +178,13 @@
                     <label><input type="checkbox" class="checkboxLabel" value="swimming" name="hobies"> Swimming</label>
                 </div>
                 <div class="col-sm-12 mb-2">
-                    <label for="careerObjective">Career Objective / Bio</label>
+                    <label for="careerObjective">Career Objective / Bio<span class="mandatory">*</span></label>
                     <textarea name="text" id="careerObjective" class="form-control"></textarea>
                 </div>
                 <div class="col-sm-12 mb-3">
-                    <label for="careerObjective">Profile Picture</label>
+                    <label for="careerObjective">Profile Picture<span class="mandatory">*</span></label>
                     <input name="file" id="profile" type="file" accept=".png,.jpeg" class="form-control-file margin-10px">
                 </div>
-                
             </div>
             <button type="button" id="previewModal" class="btn btn-info" data-toggle="modal" data-target="#preview">Preview</button>
         </form>
@@ -304,6 +306,5 @@
         else
             return false;
     }
-
 </script>
 </html>
